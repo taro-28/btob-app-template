@@ -34,7 +34,7 @@ export function DisplayLocations() {
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: 'https://btob-app-template-server.an.r.appspot.com/',
+    uri: 'https://btob-app-template-server.an.r.appspot.com/query',
     credentials: "same-origin"
   })
 });
