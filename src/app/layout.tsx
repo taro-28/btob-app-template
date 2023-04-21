@@ -1,5 +1,6 @@
 import { Header } from '@/components/Header'
 import './globals.css'
+import { Footer } from '@/components/Footer'
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,9 +14,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      {/* コンテンツが少ない場合もフッターは一番下に配置する */}
+      <body
+        className="flex flex-col min-h-screen"
+      >
         <Header />
-        {children}</body>
+        <main
+          className="flex-grow"
+        >
+        {children}
+        </main>
+        <Footer />
+        </body>
     </html>
   )
 }

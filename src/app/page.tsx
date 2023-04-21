@@ -1,7 +1,6 @@
-
 export default function Home() {
   return (
-    <main>
+    <div>
       {/* 各ページへルーティングするサイドバー */}
       <nav
       className="bg-white-800 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
@@ -19,10 +18,7 @@ export default function Home() {
           </li>
         </ul>
       </nav>
-        <section></section>
-      <footer>
-        footer
-      </footer>
-    </main>
+    <section></section>
+    </div>
   )
 }
