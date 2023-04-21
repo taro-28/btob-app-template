@@ -1,3 +1,6 @@
+import { Card } from "@/components/Card";
+import { Fuga } from "@/components/Hoge";
+
 export default function Home() {
   return (
     <div>
@@ -18,7 +21,28 @@ export default function Home() {
           </li>
         </ul>
       </nav>
-    <section></section>
+    <section>
+    {/* gridでカードを表示するエリア */}
+      <div
+      className="grid grid-cols-1 gap-4 p-4 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+      <Card
+      >
+        タスク一覧とか
+      </Card>
+      <Card
+      >
+        タスク一覧とか
+      </Card>
+      <Card
+      >
+        タスク一覧とか
+      </Card>
+      </div>
+      <div>
+        <Fuga />
+      </div>
+    </section>
     </div>
   )
 }

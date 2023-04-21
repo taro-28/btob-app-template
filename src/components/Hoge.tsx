@@ -4,13 +4,10 @@ import { useQuery, gql, HttpLink } from '@apollo/client';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const GET_LOCATIONS = gql`
-query findTodos {
-  todos {
-    text
-    done
-    user {
-      name
-    }
+query findCompanies {
+  companies {
+    id
+    name
   }
 }
 `;
@@ -24,11 +21,10 @@ export function DisplayLocations() {
 
   return (
     <div>
-      {data.todos.map(({ text, done, user }: any) => (
-        <div key={text}>
-          <p>{text}</p>
-          <p>{done}</p>
-          <p>{user.name}</p>
+      {data.companies.map(({ id, name }: any) => (
+        <div key={id}>
+          <p>{id}</p>
+          <p>{name}</p>
         </div>
       ))}
     </div>
@@ -38,7 +34,7 @@ export function DisplayLocations() {
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: 'http://localhost:8080/query',
+    uri: 'https://btob-app-template-server.an.r.appspot.com/',
     credentials: "same-origin"
   })
 });
